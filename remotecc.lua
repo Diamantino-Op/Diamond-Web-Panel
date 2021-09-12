@@ -547,6 +547,7 @@ function Connection:request()
 	local r = http.get(self.host.."?nocache="..os.time().."&ccin&get&ccid="..self.ccid.."&ccn="..self.ccn)
 	if r then
 		local d = r.readAll()
+        r.close()
 		if d == "error" then
 			error("error on request")
 			r.close()

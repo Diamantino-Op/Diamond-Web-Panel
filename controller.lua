@@ -53,11 +53,11 @@ while true do
     if data.category ~= nil then
         if data.category == categories[1] then
             selectedCategory = categories[1]
-        else if data.category == categories[2] then
+        elseif data.category == categories[2] then
             selectedCategory = categories[2]
-        else if data.category == categories[3] then
+        elseif data.category == categories[3] then
             selectedCategory = categories[3]
-        else if data.category == categories[4] then
+        elseif data.category == categories[4] then
             selectedCategory = categories[4]
         end
     end
@@ -66,23 +66,23 @@ while true do
     if data.subCategory ~= nil then
         if selectedCategory == categories[1] then
             if data.subCategory == chatSubCategories[1] then
-                selectedSubCategory == chatSubCategories[1]
+                selectedSubCategory = chatSubCategories[1]
             end
-        else if selectedCategory == categories[2] then
+        elseif selectedCategory == categories[2] then
             if data.subCategory == RSSubCategories[1] then
-                selectedSubCategory == RSSubCategories[1]
-            else if data.subCategory == RSSubCategories[2] then
-                selectedSubCategory == RSSubCategories[2]
-            else if data.subCategory == RSSubCategories[3] then
-                selectedSubCategory == RSSubCategories[3]
+                selectedSubCategory = RSSubCategories[1]
+            elseif data.subCategory == RSSubCategories[2] then
+                selectedSubCategory = RSSubCategories[2]
+            elseif data.subCategory == RSSubCategories[3] then
+                selectedSubCategory = RSSubCategories[3]
             end
-        else if selectedCategory == categories[3] then
-            --No Sub Categories for now :)
-        else if selectedCategory == categories[4] then
+        elseif selectedCategory == categories[3] then
+            print("No Sub Categories for now")
+        elseif selectedCategory == categories[4] then
             if data.subCategory == energySubcategories[1] then
-                selectedSubCategory == energySubcategories[1]
-            else if data.subCategory == energySubcategories[2] then
-                selectedSubCategory == energySubcategories[2]
+                selectedSubCategory = energySubcategories[1]
+            elseif data.subCategory == energySubcategories[2] then
+                selectedSubCategory = energySubcategories[2]
             end
         end
     end
@@ -112,7 +112,7 @@ while true do
 	sleep(1)
 end
 
-function sendGlobalMessage(string message, string sender)
+function sendGlobalMessage(message, sender)
     if chatBox == nil then error("chatBox not found") end
 
     chatBox.sendMessage(message, sender)
