@@ -1,1 +1,0 @@
-shell.run("disk/controller.lua")
